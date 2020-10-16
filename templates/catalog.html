@@ -2,6 +2,17 @@
 {% load static %}
 
 {% block title %}Каталог{% endblock %}
+{% block style %}
+<style media="all">
+    ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    li{
+      margin: 50px;
+    }
+</style>
+{% endblock %}
 {% block content %}
     <div class="container">
         <div class="header">
@@ -13,7 +24,15 @@
         </div>
 
         <div class="content">
-            {# Здесь должен отображаться каталог с телефонами #}
+            <ul style="list-style: none;">
+            {% for phone in phones %}
+                <li>
+                <h1>{{ phone.Name }}</h1>
+                <p>Стоимость: {{ phone.Price }}р.</p>
+                <img src="{{ phone.Image }}" alt="{{ phone.Name }}" style="width:158px;height:300px;">
+                </li>
+            {% endfor %}
+            </ul>
         </div>
     </div>
 {% endblock %}
