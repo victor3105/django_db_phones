@@ -8,7 +8,20 @@
             <h1>Телефон</h1>
         </div>
         <div class="content">
-
+            <p>{{ phone.Name }}</p>
+            <p>Стоимость: {{ phone.Price }}р.</p>
+            <img src="{{ phone.Image }}" alt="{{ phone.Name }}" style="width:158px;height:300px;">
+            <ul>
+                <li>Дата выпуска: {{ phone.Date }}</li>
+                <li>
+                    Наличие LTE:
+                    {% if phone.LTE %}
+                        Есть
+                    {% else %}
+                        Нет
+                    {% endif %}
+                </li>
+            </ul>
         </div>
     </div>
 {% endblock %}
