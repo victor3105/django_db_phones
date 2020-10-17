@@ -9,7 +9,7 @@
         grid-template-columns: 1fr 1fr;
     }
     li{
-      margin: 50px;
+      margin: 20px;
     }
 </style>
 {% endblock %}
@@ -27,7 +27,7 @@
             <ul style="list-style: none;">
             {% for phone in phones %}
                 <li>
-                <h1>{{ phone.Name }}</h1>
+                <a href="{{ phone.URL }}">{{ phone.Name }}</a>
                 <p>Стоимость: {{ phone.Price }}р.</p>
                 <img src="{{ phone.Image }}" alt="{{ phone.Name }}" style="width:158px;height:300px;">
                 </li>
